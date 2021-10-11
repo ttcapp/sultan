@@ -7,6 +7,9 @@ void main() {
 String btnText1="Tap Button";
 Color btnColor1= Colors.white;
 bool imgVisibility= false;
+String ima1Src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg";
+double imgHeight=250;
+double imgWidth=300;
 
 class AmarApp extends StatelessWidget {
   const AmarApp({Key? key}) : super(key: key);
@@ -30,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.black,
         centerTitle: true,
         title: Text("Sultan"),
       ),
@@ -43,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: RaisedButton(
                 color: btnColor1,
                 child: Text(btnText1,style:
-                TextStyle(color: Colors.green, fontWeight: FontWeight.bold,fontSize: 30),),
+                TextStyle(color: Colors.black54, fontWeight: FontWeight.bold,fontSize: 30),),
                 onPressed: (){
                   setState(() {
                     btnText1="Button Pressed";
@@ -55,10 +58,56 @@ class _MyHomePageState extends State<MyHomePage> {
            Visibility(
           visible: imgVisibility,
           child:
-          Image.network(
-              "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg")
-      ),
-                  Image.asset("assets/images/image2.jpg")
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.deepPurpleAccent,
+                        width: 5
+                      )
+                    ),
+                      height: imgHeight,
+                      width: imgWidth,
+                      child: Image.network(ima1Src,fit: BoxFit.cover,)
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.deepPurpleAccent,
+                              width: 5
+                          )
+                      ),
+                      height: imgHeight,
+                      width: imgWidth,
+                      child: Image.network(ima1Src,fit: BoxFit.cover,)
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.deepPurpleAccent,
+                              width: 5
+                          )
+                      ),
+                      height: imgHeight,
+                      width: imgWidth,
+                      child: Image.network(ima1Src,fit: BoxFit.cover,)
+                  ),
+                ),
+              ],
+            ),
+          )
+           ),//  Image.asset("assets/images/image2.jpg")
 
       ],
     ),
