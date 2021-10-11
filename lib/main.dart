@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sultan/second_page.dart';
 
 void main() {
   runApp(AmarApp());
@@ -41,13 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Column(
                 children: [
-            Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: RaisedButton(
-                color: btnColor1,
-                child: Text(btnText1,style:
-                TextStyle(color: Colors.black54, fontWeight: FontWeight.bold,fontSize: 30),),
-                onPressed: (){
+                  RaisedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));
+                  }),
+                  Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: RaisedButton(
+                  color: btnColor1,
+                  child: Text(btnText1,style:
+                  TextStyle(color: Colors.black54, fontWeight: FontWeight.bold,fontSize: 30),),
+                      onPressed: (){
                   setState(() {
                     btnText1="Button Pressed";
                     btnColor1=Colors.orange;
@@ -71,6 +75,34 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 5
                       )
                     ),
+                      height: imgHeight,
+                      width: imgWidth,
+                      child: Image.network(ima1Src,fit: BoxFit.cover,)
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.deepPurpleAccent,
+                              width: 5
+                          )
+                      ),
+                      height: imgHeight,
+                      width: imgWidth,
+                      child: Image.network(ima1Src,fit: BoxFit.cover,)
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.deepPurpleAccent,
+                              width: 5
+                          )
+                      ),
                       height: imgHeight,
                       width: imgWidth,
                       child: Image.network(ima1Src,fit: BoxFit.cover,)
