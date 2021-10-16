@@ -42,15 +42,19 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Column(
                 children: [
-                  RaisedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));
+                  RaisedButton(
+                    child: Text("Go To Next Page"),
+                      onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context)=>SecondPage()));
                   }),
                   Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: RaisedButton(
                   color: btnColor1,
                   child: Text(btnText1,style:
-                  TextStyle(color: Colors.black54, fontWeight: FontWeight.bold,fontSize: 30),),
+                  TextStyle(color: Colors.black54,
+                      fontWeight: FontWeight.bold,fontSize: 30),),
                       onPressed: (){
                   setState(() {
                     btnText1="Button Pressed";
