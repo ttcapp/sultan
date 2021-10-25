@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slide_drawer/slide_drawer.dart';
 import 'package:sultan/second_page.dart';
 
 void main() {
@@ -18,7 +19,34 @@ class AmarApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHomePage(),
+      home:SlideDrawer(
+        offsetFromRight: 380,
+        backgroundColor: Colors.black,
+        duration: Duration(milliseconds: 4800),
+        headDrawer: Container(
+          height: 200,
+          child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMlZz1Idi6fq4xaqnole_TMN1e7rmy0JGMBUWFqTLEZOG5uJLQoLZSNSG0C0YUXyRrto&usqp=CAU"
+          ,fit: BoxFit.fitWidth,),
+        ),
+        items: [
+          MenuItem('Home',
+              icon: Icons.ac_unit_outlined,
+              onTap: (){}),
+          MenuItem('Project',
+              icon: Icons.home,
+              onTap: (){}),
+          MenuItem('Favourite',
+              icon: Icons.mode,
+              onTap: (){}),
+          MenuItem('Profile',
+              icon: Icons.account_box_sharp,
+              onTap: (){}),
+          MenuItem('Setting',
+              icon: Icons.account_box,
+              onTap: (){}),
+        ],
+        child:MyHomePage(),
+      ),
     );
   }
 }
@@ -34,6 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          // call toggle from SlideDrawer to alternate between open and close
+          // when pressed menu button
+          onPressed: () => SlideDrawer.of(context)!.toggle(),
+        ),
         backgroundColor: Colors.black,
         centerTitle: true,
         title: Text("Sultan"),
