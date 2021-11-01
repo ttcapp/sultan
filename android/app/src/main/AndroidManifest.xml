@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sultan">
    <application
-        android:label="sultan"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Sultan Project"
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

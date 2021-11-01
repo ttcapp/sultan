@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:slide_drawer/slide_drawer.dart';
+import 'package:sultan/log_in.dart';
 import 'package:sultan/second_page.dart';
 
 void main() {
   runApp(AmarApp());
 }
+double conHeight=50;
+double conWidth=50;
 
 String btnText1="Tap Button";
 Color btnColor1= Colors.white;
@@ -20,9 +23,9 @@ class AmarApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home:SlideDrawer(
-        offsetFromRight: 380,
+        offsetFromRight: 180,
         backgroundColor: Colors.black,
-        duration: Duration(milliseconds: 4800),
+        duration: Duration(milliseconds: 800),
         headDrawer: Container(
           height: 200,
           child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMlZz1Idi6fq4xaqnole_TMN1e7rmy0JGMBUWFqTLEZOG5uJLQoLZSNSG0C0YUXyRrto&usqp=CAU"
@@ -76,11 +79,34 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Column(
                 children: [
+
+                  InkWell(
+                    onTap: (){
+                      setState(() {
+                        conHeight=150;
+                        conWidth=150;
+                      });
+                    },
+                    onDoubleTap: (){
+                      setState(() {
+                        conHeight=150;
+                        conWidth=150;
+                      });
+                    },
+                    child: AnimatedContainer(
+                      height:conHeight,
+                      width: conWidth,
+                      color: Colors.black,
+                      duration: Duration(milliseconds: 4000),
+                    ),
+                  ),
+
+
                   RaisedButton(
                     child: Text("Go To Next Page"),
                       onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder:
-                      (context)=>SecondPage()));
+                      (context)=>LogIn()));
                   }),
                   Padding(
                   padding: const EdgeInsets.all(18.0),
