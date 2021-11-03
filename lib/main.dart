@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slide_drawer/slide_drawer.dart';
+import 'package:sultan/demo_page.dart';
 import 'package:sultan/log_in.dart';
 import 'package:sultan/second_page.dart';
 
@@ -17,11 +18,14 @@ double imgHeight=250;
 double imgWidth=300;
 
 class AmarApp extends StatelessWidget {
-  const AmarApp({Key? key}) : super(key: key);
+  AmarApp({Key? key}) : super(key: key);
+
+  final navigatorkey=GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorkey,
       home:SlideDrawer(
         offsetFromRight: 180,
         backgroundColor: Colors.black,
@@ -35,9 +39,13 @@ class AmarApp extends StatelessWidget {
           MenuItem('Home',
               icon: Icons.ac_unit_outlined,
               onTap: (){}),
-          MenuItem('Project',
+          MenuItem('Demo Page',
               icon: Icons.home,
-              onTap: (){}),
+              onTap: (){
+            navigatorkey.currentState!.push(
+              MaterialPageRoute(builder:(context)=>DemoPage())
+            );
+              }),
           MenuItem('Favourite',
               icon: Icons.mode,
               onTap: (){}),
@@ -79,7 +87,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Column(
                 children: [
-
+                 ElevatedButton(
+                     onPressed: (){
+                       Navigator.push(context,
+                          MaterialPageRoute(builder: (context)=>DemoPage()));
+                     },
+                     child: Text("Go To Sing IN")),
                   InkWell(
                     onTap: (){
                       setState(() {
