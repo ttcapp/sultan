@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:slide_drawer/slide_drawer.dart';
 import 'package:sultan/demo_page.dart';
+import 'package:sultan/list_page.dart';
 import 'package:sultan/log_in.dart';
 import 'package:sultan/second_page.dart';
 
@@ -90,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                  ElevatedButton(
                      onPressed: (){
                        Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=>DemoPage()));
+                          MaterialPageRoute(builder: (context)=>ListPage()));
                      },
                      child: Text("Go To Sing IN")),
                   InkWell(
