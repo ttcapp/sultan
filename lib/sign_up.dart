@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-String _email="dxcat";
+String _email="dxcat2003@gmail.com";
 String _password="dxjui";
 final _formKey=GlobalKey<FormState>();
 
@@ -63,9 +63,7 @@ class _SignUpState extends State<SignUp> {
                         )
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+
                 ],
               ),
             ),

@@ -34,7 +34,7 @@ class AmarApp extends StatelessWidget {
         headDrawer: Container(
           height: 200,
           child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYMlZz1Idi6fq4xaqnole_TMN1e7rmy0JGMBUWFqTLEZOG5uJLQoLZSNSG0C0YUXyRrto&usqp=CAU"
-          ,fit: BoxFit.fitWidth,),
+            ,fit: BoxFit.fitWidth,),
         ),
         items: [
           MenuItem('Home',
@@ -43,9 +43,9 @@ class AmarApp extends StatelessWidget {
           MenuItem('Demo Page',
               icon: Icons.home,
               onTap: (){
-            navigatorkey.currentState!.push(
-              MaterialPageRoute(builder:(context)=>DemoPage())
-            );
+                navigatorkey.currentState!.push(
+                    MaterialPageRoute(builder:(context)=>DemoPage())
+                );
               }),
           MenuItem('Favourite',
               icon: Icons.mode,
@@ -85,145 +85,144 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Sultan"),
       ),
       body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-                children: [
-                 ElevatedButton(
-                     onPressed: (){
-                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=>ListPage()));
-                     },
-                     child: Text("Go To Sing IN")),
-                  InkWell(
-                    onTap: (){
-                      setState(() {
-                        conHeight=150;
-                        conWidth=150;
-                      });
-                    },
-                    onDoubleTap: (){
-                      setState(() {
-                        conHeight=150;
-                        conWidth=150;
-                      });
-                    },
-                    child: AnimatedContainer(
-                      height:conHeight,
-                      width: conWidth,
-                      color: Colors.black,
-                      duration: Duration(milliseconds: 4000),
-                    ),
-                  ),
-
-
-                  RaisedButton(
-                    child: Text("Go To Next Page"),
-                      onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context)=>LogIn()));
-                  }),
-                  Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: RaisedButton(
-                  color: btnColor1,
-                  child: Text(btnText1,style:
-                  TextStyle(color: Colors.black54,
-                      fontWeight: FontWeight.bold,fontSize: 30),),
-                      onPressed: (){
+        child: Center(
+          child: Column(
+            children: [
+              ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=>ListPage()));
+                  },
+                  child: Text("Go To Sing IN")),
+              InkWell(
+                onTap: (){
                   setState(() {
-                    btnText1="Button Pressed";
-                    btnColor1=Colors.orange;
-                    imgVisibility=true;
+                    conHeight=150;
+                    conWidth=150;
                   });
-                }),
-            ),
-           Visibility(
-          visible: imgVisibility,
-          child:
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.deepPurpleAccent,
-                        width: 5
-                      )
-                    ),
-                      height: imgHeight,
-                      width: imgWidth,
-                      child: Image.network(ima1Src,fit: BoxFit.cover,)
-                  ),
+                },
+                onDoubleTap: (){
+                  setState(() {
+                    conHeight=150;
+                    conWidth=150;
+                  });
+                },
+                child: AnimatedContainer(
+                  height:conHeight,
+                  width: conWidth,
+                  color: Colors.black,
+                  duration: Duration(milliseconds: 4000),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.deepPurpleAccent,
-                              width: 5
-                          )
-                      ),
-                      height: imgHeight,
-                      width: imgWidth,
-                      child: Image.network(ima1Src,fit: BoxFit.cover,)
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.deepPurpleAccent,
-                              width: 5
-                          )
-                      ),
-                      height: imgHeight,
-                      width: imgWidth,
-                      child: Image.network(ima1Src,fit: BoxFit.cover,)
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.deepPurpleAccent,
-                              width: 5
-                          )
-                      ),
-                      height: imgHeight,
-                      width: imgWidth,
-                      child: Image.network(ima1Src,fit: BoxFit.cover,)
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Colors.deepPurpleAccent,
-                              width: 5
-                          )
-                      ),
-                      height: imgHeight,
-                      width: imgWidth,
-                      child: Image.network(ima1Src,fit: BoxFit.cover,)
-                  ),
-                ),
-              ],
-            ),
-          )
-           ),//  Image.asset("assets/images/image2.jpg")
+              ),
 
-      ],
-    ),
-    ),
-    ),
+
+              RaisedButton(
+                  child: Text("Go To Next Page"),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context)=>LogIn()));
+                  }),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: RaisedButton(
+                    color: btnColor1,
+                    child: Text(btnText1,style:
+                    TextStyle(color: Colors.black54,
+                        fontWeight: FontWeight.bold,fontSize: 30),),
+                    onPressed: (){
+                      setState(() {
+                        btnText1="Button Pressed";
+                        btnColor1=Colors.orange;
+                        imgVisibility=true;
+                      });
+                    }),
+              ),
+              Visibility(
+                  visible: imgVisibility,
+                  child:
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.deepPurpleAccent,
+                                      width: 5
+                                  )
+                              ),
+                              height: imgHeight,
+                              width: imgWidth,
+                              child: Image.network(ima1Src,fit: BoxFit.cover,)
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.deepPurpleAccent,
+                                      width: 5
+                                  )
+                              ),
+                              height: imgHeight,
+                              width: imgWidth,
+                              child: Image.network(ima1Src,fit: BoxFit.cover,)
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.deepPurpleAccent,
+                                      width: 5
+                                  )
+                              ),
+                              height: imgHeight,
+                              width: imgWidth,
+                              child: Image.network(ima1Src,fit: BoxFit.cover,)
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.deepPurpleAccent,
+                                      width: 5
+                                  )
+                              ),
+                              height: imgHeight,
+                              width: imgWidth,
+                              child: Image.network(ima1Src,fit: BoxFit.cover,)
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.deepPurpleAccent,
+                                      width: 5
+                                  )
+                              ),
+                              height: imgHeight,
+                              width: imgWidth,
+                              child: Image.network(ima1Src,fit: BoxFit.cover,)
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+              ),//  Image.asset("assets/images/image2.jpg")
+
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
-

@@ -1,6 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sultan/demo_page.dart';
-
 class ListPage extends StatefulWidget {
   const ListPage({Key? key}) : super(key: key);
 
@@ -9,12 +9,15 @@ class ListPage extends StatefulWidget {
 }
 
 List <String> stdList=[
-  "Tamgid",
+  "Alamin",
   "Dipto",
+  "Tamjid",
   "Rafi",
-  "Cat",
+  "Alamin",
+  "Dipto",
+  "Tamjid",
+  "Rafi",
 ];
-
 
 class _ListPageState extends State<ListPage> {
   @override
@@ -27,27 +30,29 @@ class _ListPageState extends State<ListPage> {
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: stdList.length,
+                itemCount: stdList.length,
                 itemBuilder: (context,index){
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DemoPage()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder:
+                                (context)=>DemoPage()));
                       },
                       child: Container(
                         height: 50,
                         width: 180,
-                        color: Colors.black,
+                        color: Colors.greenAccent,
                         child: Text(stdList[index],
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white,
-                        fontWeight: FontWeight.bold,fontSize: 30),
-                        ),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.red,
+                              fontWeight: FontWeight.bold,fontSize: 30),),
                       ),
                     ),
                   );
-                }),
+                }
+            ),
           )
         ],
       ),
